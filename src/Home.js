@@ -30,6 +30,7 @@ const Home = () => {
     {CardData.map(function ncard(val){
         return (
             <DataUploadCard
+            key = {val.id}
                 imgsrc = {val.imgsrc}
                 head={val.head}
                 body = {val.body}
