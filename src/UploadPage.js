@@ -1,10 +1,10 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-import Navbar from "./Navbar";
-import LogoutButton from "./LogoutButton";
-import UploadTopBar from "./UploadTopBar";
-import TableUploadPage from "./TableUploadPage";
+import Navbar from "./components/Navbar";
+import LogoutButton from "./components/LogoutButton";
+import UploadTopBar from "./components/UploadTopBar";
+import TableUploadPage from "./components/TableUploadPage";
 import {Link} from "react-router-dom";
 
 let head1 = "Upload workforce data for Faethm";

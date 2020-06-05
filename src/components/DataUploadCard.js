@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import "../node_modules/bootstrap/dist/css/bootstrap.css";
-import "./App.css";
+import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+import "../App.css";
 
 const DataUploadCard = (props) => {
     return(

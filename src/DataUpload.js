@@ -1,20 +1,11 @@
 import React from "react";
-import Navbar from "./Navbar";
-import LogoutButton from "./LogoutButton";
-import UploadTopBar from "./UploadTopBar";
-import DragAndDrop from "./DragAndDrop";
+import Navbar from "./components/Navbar";
+import LogoutButton from "./components/LogoutButton";
+import UploadTopBar from "./components/UploadTopBar";
+import DragAndDrop from "./components/DragAndDrop";
 import {Link} from "react-router-dom";
 
 const head1 = "Upload workforce data for Faethm"
-
-// let images =  [
-// {
-//     name: "",
-//     description: ""
-// },{
-
-// }
-// ]
 
 
 const DataUpload = () => {

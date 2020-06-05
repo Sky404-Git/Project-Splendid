@@ -1,9 +1,10 @@
 import React from "react";
-import Navbar from "./Navbar";
-import LogoutButton from "./LogoutButton";
-import UploadTopBar from "./UploadTopBar";
+import Navbar from "./components/Navbar";
+import LogoutButton from "./components/LogoutButton";
+import UploadTopBar from "./components/UploadTopBar";
 import {Link} from "react-router-dom";
-import CheckDataTable from "./CheckDataTable";
+import CheckDataTable from "./components/CheckDataTable";
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 let head1 = "Upload workforce data for Faethm"
 let head2 = "USER DATA TABLE";

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useTable, usePagination } from 'react-table'
-import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import "../../node_modules/bootstrap/dist/css/bootstrap.css";
 import WarningCard from "./WarningCard";
 import makeData from './makeData'
 
