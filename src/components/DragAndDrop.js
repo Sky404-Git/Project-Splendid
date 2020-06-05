@@ -14,7 +14,7 @@ function DragAndDrop(props) {
     <section className="container" style={{width:"auto", height:"auto", marginTop:"30px", padding:"0px", backgroundColor:"white"}}>
       <div {...getRootProps({className: 'dropzone'})} style={{backgroundColor:"#1a2e3f", width:"auto", height:"280px", border:"1px dotted white", color:"white", textAlign:"center"}}>
         <input {...getInputProps()} />
-        <img src="./upload_icon.png" alt="upload icon" style={{width:"50px", height:"50px", marginTop:"8%"}}/>
+        <img src="./images/upload_icon.png" alt="upload icon" style={{width:"50px", height:"50px", marginTop:"8%"}}/>
         <p>Drag and Drop to upload <br/> Or click to browse</p>
       </div>
       <aside>

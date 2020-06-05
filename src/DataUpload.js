@@ -24,11 +24,11 @@ const DataUpload = () => {
                         <h1 style={{color:"white", fontSize:"28px"}}>{head1}</h1>
                     </div>
                     <UploadTopBar
-                      imagesrc1 ="./tick.png"
-                      imagesrc2 ="./2a.png"
-                      imagesrc3 ="./3b.png"
-                      imagesrc4 ="./4b.png"
-                      imagesrc5 ="./5b.png"
+                      imagesrc1 ="./images/tick.png"
+                      imagesrc2 ="./images/2a.png"
+                      imagesrc3 ="./images/3b.png"
+                      imagesrc4 ="./images/4b.png"
+                      imagesrc5 ="./images/5b.png"
                     />
                     <DragAndDrop/>
                 </div>

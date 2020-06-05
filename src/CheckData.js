@@ -5,6 +5,7 @@ import UploadTopBar from "./components/UploadTopBar";
 import {Link} from "react-router-dom";
 import CheckDataTable from "./components/CheckDataTable";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import WarningCard from "./components/WarningCard";
 
 let head1 = "Upload workforce data for Faethm"
 let head2 = "USER DATA TABLE";
@@ -26,13 +27,42 @@ const CheckData = () => {
                         <h1 style={{color:"white", fontSize:"28px"}}>{head1}</h1>
                     </div>
                     <UploadTopBar
-                      imagesrc1 ="./tick.png"
-                      imagesrc2 ="./tick.png"
-                      imagesrc3 ="./3a.png"
-                      imagesrc4 ="./4b.png"
-                      imagesrc5 ="./5b.png"
+                      imagesrc1 ="./images/tick.png"
+                      imagesrc2 ="./images/tick.png"
+                      imagesrc3 ="./images/3a.png"
+                      imagesrc4 ="./images/4b.png"
+                      imagesrc5 ="./images/5b.png"
                     />
                     <h1 style={{color:"white", fontSize:"18px", marginTop:"30px"}}>{head2}</h1>
+                    <div className="container-fluid">
+                            <div id="accordion">
+                                
+                                <WarningCard
+                                classname = "card bg-danger"
+                                link = "#collapseOne"
+                                title = "High severity warnings"
+                                id = "collapseOne"
+                                body = "Warning message here !!"
+                                />
+                                <br></br>
+                                <WarningCard
+                                classname = "card bg-warning"
+                                link = "#collapseTwo"
+                                title = "Medium severity warnings"
+                                id = "collapseTwo"
+                                body = "Warning message here !!"
+                                />
+                                <br></br>
+                                <WarningCard
+                                classname = "card bg-info"
+                                link = "#collapseThree"
+                                title = "Low severity warnings"
+                                id = "collapseThree"
+                                body = "Warning message here !!"
+                                />
+
+                            </div>
+                            </div>
                     <div className="container-fluid" style={{width:"auto", height:"auto", marginTop:"10px", marginBottom:"30px", overflowX:"auto", padding:"0px"}}>
                     <CheckDataTable/>
                     </div>

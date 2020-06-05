@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { useTable, usePagination } from 'react-table'
 import "../../node_modules/bootstrap/dist/css/bootstrap.css";
-import WarningCard from "./WarningCard";
 import makeData from './makeData'
 
 
@@ -323,38 +322,7 @@ function App() {
 
   return (
   <>    
-<div className="container-fluid">
-  <div id="accordion">
-    
-    <WarningCard
-    classname = "card bg-danger"
-    link = "#collapseOne"
-    title = "High severity warnings"
-    id = "collapseOne"
-    body = "Warning message here !!"
-    />
-    <br></br>
-    <WarningCard
-    classname = "card bg-warning"
-    link = "#collapseTwo"
-    title = "Medium severity warnings"
-    id = "collapseTwo"
-    body = "Warning message here !!"
-    />
-    <br></br>
-    <WarningCard
-    classname = "card bg-info"
-    link = "#collapseThree"
-    title = "Low severity warnings"
-    id = "collapseThree"
-    body = "Warning message here !!"
-    />
-
-</div>
-</div>
-
-    
-    <Styles>
+<Styles>
       <Table
         columns={columns}
         data={data}

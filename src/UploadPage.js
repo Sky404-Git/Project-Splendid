@@ -31,11 +31,11 @@ const UploadPage = () => {
                         <h1 style={{color:"white", fontSize:"28px"}}>{head1}</h1>
                     </div>
                     <UploadTopBar
-                      imagesrc1 ="./1a.png"
-                      imagesrc2 ="./2b.png"
-                      imagesrc3 ="./3b.png"
-                      imagesrc4 ="./4b.png"
-                      imagesrc5 ="./5b.png"
+                      imagesrc1 ="./images/1a.png"
+                      imagesrc2 ="./images/2b.png"
+                      imagesrc3 ="./images/3b.png"
+                      imagesrc4 ="./images/4b.png"
+                      imagesrc5 ="./images/5b.png"
                     />
                     <div className="container-fluid mx-0" style={{display:"flex",flexWrap:"wrap", padding:"0px"}}>
                         <div className="container-fluid mx-0"style={{width:"62%", height:"auto", marginTop:"60px"}}>
