@@ -3,7 +3,8 @@ import Navbar from "./Navbar";
 import LogoutButton from "./LogoutButton";
 import UploadTopBar from "./UploadTopBar";
 import {Link} from "react-router-dom";
-import "./App.css";
+import CheckDataTable from "./CheckDataTable";
+
 let head1 = "Upload workforce data for Faethm"
 let head2 = "USER DATA TABLE";
 
@@ -16,7 +17,7 @@ const CheckData = () => {
                 <div className="col-1" style={{ marginRight:"6%"}}>
                     <Navbar/>
                 </div>
-                <div className="col-10 border">
+                <div className="col-10">
                     <div className="container-fluid" style={{width:"auto", height:"80px"}}>
                         <LogoutButton/>
                     </div>
@@ -31,64 +32,9 @@ const CheckData = () => {
                       imagesrc5 ="./5b.png"
                     />
                     <h1 style={{color:"white", fontSize:"18px", marginTop:"30px"}}>{head2}</h1>
-                    <div className="container-fluid bordered" style={{width:"auto", height:"200px", marginTop:"10px", marginBottom:"30px", overflowY:"auto", overflowX:"auto"}}>
-                        <table className="table table-bordered" style={{width: "auto", height:"200px", color:"white"}}>
-                            <thead className="thead" style={{fontWeight:"normal"}}>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>FTE&nbsp;*</th>
-                                    <th>JOB&nbsp;NAME&nbsp;*</th>
-                                    <th>TOTAL&nbsp;COMPENSATION&nbsp;*</th>
-                                    <th>EMPLOYEE&nbsp;TYPE</th>
-                                    <th>GENDER</th>
-                                    <th>BIRTH&nbsp;YEAR</th>
-                                    <th>JOB&nbsp;DESCRIPTION</th>
-                                    <th>JOB&nbsp;FAMILY</th>
-                                    <th>EMPLOYEE&nbsp;LEVEL</th>  
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>272</td>
-                                    <td>0.5</td>
-                                    <td>Senior project manager</td>
-                                    <td>12345</td>
-                                    <td>Contract</td>
-                                    <td>F</td>
-                                    <td>1956</td>
-                                    <td>Lorem Ipsum</td>
-                                    <td>Product</td>
-                                    <td>4</td>
-                                </tr>
-                                <tr>
-                                    <td>272</td>
-                                    <td>0.5</td>
-                                    <td>Senior project manager</td>
-                                    <td>12345</td>
-                                    <td>Contract</td>
-                                    <td>F</td>
-                                    <td>1956</td>
-                                    <td>Lorem Ipsum</td>
-                                    <td>Product</td>
-                                    <td>4</td>
-                                </tr>
-                                <tr>
-                                    <td>272</td>
-                                    <td>0.5</td>
-                                    <td>Senior project manager</td>
-                                    <td>12345</td>
-                                    <td>Contract</td>
-                                    <td>F</td>
-                                    <td>1956</td>
-                                    <td>Lorem Ipsum</td>
-                                    <td>Product</td>
-                                    <td>4</td>
-                                </tr>
-                            </tbody>
-                            </table>
-          
+                    <div className="container-fluid" style={{width:"auto", height:"auto", marginTop:"10px", marginBottom:"30px", overflowX:"auto", padding:"0px"}}>
+                    <CheckDataTable/>
                     </div>
-                    
                 </div>
             </div>
             <div className="row" style={{width:"auto", height:"100px", marginTop:"30px", backgroundColor:"#1a2e3f", alignItems:"center"}}>

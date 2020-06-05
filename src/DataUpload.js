@@ -5,7 +5,17 @@ import UploadTopBar from "./UploadTopBar";
 import DragAndDrop from "./DragAndDrop";
 import {Link} from "react-router-dom";
 
-let head1 = "Upload workforce data for Faethm"
+const head1 = "Upload workforce data for Faethm"
+
+// let images =  [
+// {
+//     name: "",
+//     description: ""
+// },{
+
+// }
+// ]
+
 
 const DataUpload = () => {
     return (
