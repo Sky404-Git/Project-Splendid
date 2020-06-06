@@ -1,8 +1,8 @@
 import React from 'react';
-import Navbar from "./Navbar";
-import ToggleButton from "./ToggleButton";
-import DataUploadCard from "./DataUploadCard";
-import CardData from "./CardData";
+import Navbar from "./components/Navbar";
+import ToggleButton from "./components/ToggleButton";
+import DataUploadCard from "./components/DataUploadCard";
+import CardData from "./components/CardData";
 import {Link} from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
@@ -30,6 +30,7 @@ const Home = () => {
     {CardData.map(function ncard(val){
         return (
             <DataUploadCard
+            key = {val.id}
                 imgsrc = {val.imgsrc}
                 head={val.head}
                 body = {val.body}

@@ -1,15 +1,17 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-import Navbar from "./Navbar";
-import LogoutButton from "./LogoutButton";
-import UploadTopBar from "./UploadTopBar";
-import TableUploadPage from "./TableUploadPage";
+import Navbar from "./components/Navbar";
+import LogoutButton from "./components/LogoutButton";
+import UploadTopBar from "./components/UploadTopBar";
+import TableUploadPage from "./components/TableUploadPage";
 import {Link} from "react-router-dom";
 import { CSVLink, CSVDownload } from "react-csv";
 
-
 let head1 = "Upload workforce data for Faethm";
+let para1 = "The Faethm prediction algorithm works best when assessing a complete and accurate dataset. * denotes a mandatory field, the additional information requested in the template will assist in providing deeper insights when reviewing your results. Example data is shown below, hover over the columns to learn the format before continuing.";
+let head2 = "Download formatting instructions"
+let para2 = "Save the formatting instructions for your reference by downloading this PDF.";
 
 const csvData = [
     ["role_name", "recommended_title", "role_description","role_family","org_level_1","org_level_2","org_level_3","pred_soc_1","pred_name1","pred_soc_2","pred_name2","pred_soc3","pred_name3","compo_bracket","total_fte","has_reports_ratio","has_mgr_reports_ratio","New Job","Review Required","Selected SOC Code","Selected SOC Name","Description"],
@@ -35,28 +37,24 @@ const UploadPage = () => {
                         <h1 style={{color:"white", fontSize:"28px"}}>{head1}</h1>
                     </div>
                     <UploadTopBar
-                      imagesrc1 ="./1a.png"
-                      imagesrc2 ="./2b.png"
-                      imagesrc3 ="./3b.png"
-                      imagesrc4 ="./4b.png"
-                      imagesrc5 ="./5b.png"
+                      imagesrc1 ="./images/1a.png"
+                      imagesrc2 ="./images/2b.png"
+                      imagesrc3 ="./images/3b.png"
+                      imagesrc4 ="./images/4b.png"
+                      imagesrc5 ="./images/5b.png"
                     />
                     <div className="container-fluid mx-0" style={{display:"flex",flexWrap:"wrap", padding:"0px"}}>
                         <div className="container-fluid mx-0"style={{width:"62%", height:"auto", marginTop:"60px"}}>
-                            <p style={{color:"white"}}>The Faethm prediction algorithm works best when assessing a complete and accurate
-                                dataset. * denotes a mandatory field, the additional information requested in the template will assist in 
-                                providing deeper insights when reviewing your results. Example data is shown below, hover over the columns
-                                to learn the format before continuing.
-                            </p>  
+                            <p style={{color:"white"}}>{para1}</p>  
                             <CSVLink data={csvData}><button className="btn btn-primary">Download data template</button></CSVLink>
                         </div>
                         <div className="container-fluid"style={{width:"38%", height:"auto", marginTop:"60px", backgroundColor:"#1b3e4e", padding:"10px"}}>
-                            <p style={{color:"white", fontSize:"18px"}}>Download formatting instructions</p>
-                            <p  style={{color:"white"}}>Save the formatting instructions for your reference by downloading this PDF.</p>
+                            <p style={{color:"white", fontSize:"18px"}}>{head2}</p>
+                            <p  style={{color:"white"}}>{para2}</p>
                             <button type="button" class="btn btn-outline-info btn-block">Download PDF instructions</button>
                         </div>
                     </div>
-
+   
                 <TableUploadPage/>
     
   
@@ -70,4 +68,5 @@ const UploadPage = () => {
         </>
     );
 };
+
 export default UploadPage;

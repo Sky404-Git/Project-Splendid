@@ -1,11 +1,12 @@
 import React from "react";
-import Navbar from "./Navbar";
-import LogoutButton from "./LogoutButton";
-import UploadTopBar from "./UploadTopBar";
-import DragAndDrop from "./DragAndDrop";
+import Navbar from "./components/Navbar";
+import LogoutButton from "./components/LogoutButton";
+import UploadTopBar from "./components/UploadTopBar";
+import DragAndDrop from "./components/DragAndDrop";
 import {Link} from "react-router-dom";
 
-let head1 = "Upload workforce data for Faethm"
+const head1 = "Upload workforce data for Faethm"
+
 
 const DataUpload = () => {
     return (
@@ -23,18 +24,18 @@ const DataUpload = () => {
                         <h1 style={{color:"white", fontSize:"28px"}}>{head1}</h1>
                     </div>
                     <UploadTopBar
-                      imagesrc1 ="./tick.png"
-                      imagesrc2 ="./2a.png"
-                      imagesrc3 ="./3b.png"
-                      imagesrc4 ="./4b.png"
-                      imagesrc5 ="./5b.png"
+                      imagesrc1 ="./images/tick.png"
+                      imagesrc2 ="./images/2a.png"
+                      imagesrc3 ="./images/3b.png"
+                      imagesrc4 ="./images/4b.png"
+                      imagesrc5 ="./images/5b.png"
                     />
                     <DragAndDrop/>
                 </div>
             </div>
             <div className="row" style={{width:"auto", height:"100px", marginTop:"30px", backgroundColor:"#1a2e3f", alignItems:"center"}}>
              <Link to="./" className="btn btn-primary" style={{backgroundColor:"#253848", color:"white",width:"100px", height:"40px", textAlign:"center", marginLeft:"4%"}}>Back</Link>   
-                <Link to="./data_upload" className="btn btn-primary" style={{backgroundColor:"#253848", color:"white",width:"100px", height:"40px", marginLeft:"77%"}}>Continue</Link>
+                <Link to="./check_data" className="btn btn-primary" style={{backgroundColor:"#253848", color:"white",width:"100px", height:"40px", marginLeft:"77%"}}>Continue</Link>
             </div>
         </div>
         </>
