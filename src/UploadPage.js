@@ -6,9 +6,17 @@ import LogoutButton from "./LogoutButton";
 import UploadTopBar from "./UploadTopBar";
 import TableUploadPage from "./TableUploadPage";
 import {Link} from "react-router-dom";
+import { CSVLink, CSVDownload } from "react-csv";
+
 
 let head1 = "Upload workforce data for Faethm";
 
+const csvData = [
+    ["role_name", "recommended_title", "role_description","role_family","org_level_1","org_level_2","org_level_3","pred_soc_1","pred_name1","pred_soc_2","pred_name2","pred_soc3","pred_name3","compo_bracket","total_fte","has_reports_ratio","has_mgr_reports_ratio","New Job","Review Required","Selected SOC Code","Selected SOC Name","Description"],
+    ["Ahmed", "Tomi", "ah@smthing.co.com"],
+    ["Raed", "Labes", "rl@smthing.co.com"],
+    ["Yezzi", "Min l3b", "ymin@cocococo.com"]
+  ];
 
 const UploadPage = () => {
     return (
@@ -40,7 +48,7 @@ const UploadPage = () => {
                                 providing deeper insights when reviewing your results. Example data is shown below, hover over the columns
                                 to learn the format before continuing.
                             </p>  
-                            <button className="btn btn-primary">Download data template</button>
+                            <CSVLink data={csvData}><button className="btn btn-primary">Download data template</button></CSVLink>
                         </div>
                         <div className="container-fluid"style={{width:"38%", height:"auto", marginTop:"60px", backgroundColor:"#1b3e4e", padding:"10px"}}>
                             <p style={{color:"white", fontSize:"18px"}}>Download formatting instructions</p>
@@ -48,7 +56,7 @@ const UploadPage = () => {
                             <button type="button" class="btn btn-outline-info btn-block">Download PDF instructions</button>
                         </div>
                     </div>
-   
+
                 <TableUploadPage/>
     
   
