@@ -6,7 +6,7 @@ import LogoutButton from "../components/LogoutButton";
 import UploadTopBar from "../components/UploadTopBar";
 import TableUploadPage from "../components/TableUploadPage";
 import Footer from "../components/Footer";
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink} from "react-csv";
 
 let head1 = "Upload workforce data for Faethm";
 let para1 = "The Faethm prediction algorithm works best when assessing a complete and accurate dataset. * denotes a mandatory field, the additional information requested in the template will assist in providing deeper insights when reviewing your results. Example data is shown below, hover over the columns to learn the format before continuing.";
