@@ -29,7 +29,7 @@ const CardData = [
     },
     {
         id: 5,
-        imgsrc : "./Iimages/con10.png",
+        imgsrc : "./images/Icon10.png",
         head:"5. Insights ready",
         body:"Once all of your data is checked and job matching is complete, your charts are ready to view.",
         link : "#" 

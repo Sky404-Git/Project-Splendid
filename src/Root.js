@@ -1,8 +1,8 @@
 import React from "react";
-import Home from "./Home";
-import UploadPage from "./UploadPage";
-import DataUpload from "./DataUpload";
-import CheckData from "./CheckData";
+import Home from "./Home/Home";
+import UploadPage from "./DataRequirement/UploadPage";
+import DataUpload from "./DataUpload/DataUpload";
+import CheckData from "./CheckData/CheckData";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import {Route, Switch} from "react-router-dom";
 

@@ -8,7 +8,7 @@ const TableUploadPage = () => {
         <>
         <div className="container-fluid" style={{marginTop:"40px", width:"auto"}}>
         <div className="table-responsive">
-            <table className="table table-borderless" style={{width: "auto", color:"white"}}>
+            <table className="table table-borderless" style={{color:"white"}}>
             <thead className="thead" style={{backgroundColor:"#46616e", fontWeight:"normal"}}>
             <tr>
                 <th title="Hooray!">ID</th>
