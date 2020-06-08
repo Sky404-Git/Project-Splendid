@@ -7,6 +7,7 @@ import UploadTopBar from "../components/UploadTopBar";
 import TableUploadPage from "../components/TableUploadPage";
 import Footer from "../components/Footer";
 import { CSVLink} from "react-csv";
+import jsPDF from 'jspdf';
 
 let head1 = "Upload workforce data for Faethm";
 let para1 = "The Faethm prediction algorithm works best when assessing a complete and accurate dataset. * denotes a mandatory field, the additional information requested in the template will assist in providing deeper insights when reviewing your results. Example data is shown below, hover over the columns to learn the format before continuing.";
@@ -19,6 +20,25 @@ const csvData = [
     ["Raed", "Labes", "rl@smthing.co.com"],
     ["Yezzi", "Min l3b", "ymin@cocococo.com"]
   ];
+
+    
+  
+  const generatePDF = () => {
+    var doc = new jsPDF('p', 'pt');
+    
+    doc.text(20, 20, 'If you don\'t have a format of file please download it first.')
+
+    doc.setFont('helvetica')
+    doc.setFontType('normal')
+    doc.text(20, 60, 'Please insert the data\'s as per the given format in the file')
+
+    doc.setFont('helvetica')
+    doc.setFontType('normal')
+    doc.text(20, 100, 'Finally, Upload the data that has been written in the format.')      
+
+    
+    doc.save('sample.pdf')
+  }   
 
 const UploadPage = () => {
     return (
@@ -51,7 +71,7 @@ const UploadPage = () => {
                         <div className="container-fluid" style={{width:"38%", marginTop:"60px", backgroundColor:"#1b3e4e", padding:"10px"}}>
                             <p1>{head2}</p1>
                             <p>{para2}</p>
-                            <button type="button" class="btn btn-outline-info btn-block">Download PDF instructions</button>
+                            <button onClick={generatePDF} type="button" class="btn btn-outline-info btn-block">Download PDF instructions</button>
                         </div>
                     </div>
    
