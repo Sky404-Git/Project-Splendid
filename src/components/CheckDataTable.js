@@ -1,21 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import { useTable, usePagination } from 'react-table'
+import React from "react";
+import styled from "styled-components";
+import { useTable, usePagination } from "react-table";
 import "../../node_modules/bootstrap/dist/css/bootstrap.css";
-import makeData from './makeData'
-
+import makeData from "./makeData";
 
 const Styles = styled.div`
   padding: 1rem;
 
-
-
   table {
     border-spacing: 0;
     border: 1px solid #02baad;
-    margin-left:-1rem;
-    color:white;
-    
+    margin-left: -1rem;
+    color: white;
 
     tr {
       :last-child {
@@ -24,8 +20,9 @@ const Styles = styled.div`
         }
       }
     }
-    th
-    {background-color:#46616e;}
+    th {
+      background-color: #46616e;
+    }
 
     th,
     td {
@@ -44,7 +41,7 @@ const Styles = styled.div`
   .pagination {
     padding: 0.5rem;
   }
-`
+`;
 
 // Let's add a fetchData method to our Table component that will be used to fetch
 // new data when pagination state changes
@@ -84,30 +81,29 @@ function Table({
       pageCount: controlledPageCount,
     },
     usePagination
-  )
+  );
 
   // Listen for changes in pagination and use the state to fetch our new data
   React.useEffect(() => {
-    fetchData({ pageIndex, pageSize })
-  }, [fetchData, pageIndex, pageSize])
+    fetchData({ pageIndex, pageSize });
+  }, [fetchData, pageIndex, pageSize]);
 
   // Render the UI for your table
   return (
     <>
-      
       <table {...getTableProps()}>
         <thead>
-          {headerGroups.map(headerGroup => (
+          {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map(column => (
+              {headerGroup.headers.map((column) => (
                 <th {...column.getHeaderProps()}>
-                  {column.render('Header')}
+                  {column.render("Header")}
                   <span>
                     {column.isSorted
                       ? column.isSortedDesc
-                        ? ' 🔽'
-                        : ' 🔼'
-                      : ''}
+                        ? " 🔽"
+                        : " 🔼"
+                      : ""}
                   </span>
                 </th>
               ))}
@@ -116,14 +112,16 @@ function Table({
         </thead>
         <tbody {...getTableBodyProps()}>
           {page.map((row, i) => {
-            prepareRow(row)
+            prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
-                {row.cells.map(cell => {
-                  return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                {row.cells.map((cell) => {
+                  return (
+                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                  );
                 })}
               </tr>
-            )
+            );
           })}
           <tr>
             {loading ? (
@@ -131,7 +129,7 @@ function Table({
               <td colSpan="1000">Loading...</td>
             ) : (
               <td colSpan="1000">
-                Showing {page.length} of ~{controlledPageCount * pageSize}{' '}
+                Showing {page.length} of ~{controlledPageCount * pageSize}{" "}
                 results
               </td>
             )}
@@ -144,42 +142,42 @@ function Table({
       */}
       <div className="pagination">
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-          {'<<'}
-        </button>{' '}
+          {"<<"}
+        </button>{" "}
         <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-          {'<'}
-        </button>{' '}
+          {"<"}
+        </button>{" "}
         <button onClick={() => nextPage()} disabled={!canNextPage}>
-          {'>'}
-        </button>{' '}
+          {">"}
+        </button>{" "}
         <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          {'>>'}
-        </button>{' '}
-        <span style={{color:"white"}}>
-          Page{' '}
+          {">>"}
+        </button>{" "}
+        <span style={{ color: "white" }}>
+          Page{" "}
           <strong>
             {pageIndex + 1} of {pageOptions.length}
-          </strong>{' '}
+          </strong>{" "}
         </span>
-        <span style={{color:"white"}}>
-          | Go to page:{' '}
+        <span style={{ color: "white" }}>
+          | Go to page:{" "}
           <input
             type="number"
             defaultValue={pageIndex + 1}
-            onChange={e => {
-              const page = e.target.value ? Number(e.target.value) - 1 : 0
-              gotoPage(page)
+            onChange={(e) => {
+              const page = e.target.value ? Number(e.target.value) - 1 : 0;
+              gotoPage(page);
             }}
-            style={{ width: '100px' }}
+            style={{ width: "100px" }}
           />
-        </span>{' '}
+        </span>{" "}
         <select
           value={pageSize}
-          onChange={e => {
-            setPageSize(Number(e.target.value))
+          onChange={(e) => {
+            setPageSize(Number(e.target.value));
           }}
         >
-          {[10, 20, 30, 40, 50].map(pageSize => (
+          {[10, 20, 30, 40, 50].map((pageSize) => (
             <option key={pageSize} value={pageSize}>
               Show {pageSize}
             </option>
@@ -187,110 +185,109 @@ function Table({
         </select>
       </div>
     </>
-  )
+  );
 }
 
 // Let's simulate a large dataset on the server (outside of our component)
-const serverData = makeData(10000)
+const serverData = makeData(0);
 
 function App() {
   const columns = React.useMemo(
     () => [
-    {
-        Header: 'ID',
-        accessor: 'id',
-    },
-    {
-        Header: 'FTE',
-        accessor: 'fte',
-    },
-    {
-         Header: 'Job name',
-         accessor: 'jobname',
-    },
-    {
-         Header: 'Total compensation',
-         accessor: 'compensation',
-    },
-    {
-         Header: 'Employee type',
-         accessor: 'employeetype',
-    },
-    {
-         Header: 'Gender',
-         accessor: 'gender',
-    },
-    {
-         Header: 'Birth year',
-         accessor: 'birthyear',
-    },
-    {
-         Header: 'Job description',
-         accessor: 'jobdesc',
-    },
-    {
-         Header: 'Job family',
-         accessor: 'jobfamily',
-    },
-    {
-         Header: 'Employee level',
-         accessor: 'employeelevel',
-    },
-    {
-         Header: 'Org level 1',
-         accessor: 'level1',
-    },
-    {
-         Header: 'Org level 2',
-         accessor: 'level2',
-    },
-    {
-         Header: 'Org level 3',
-         accessor: 'level3',
-    },
-    {
-         Header: 'Site name',
-         accessor: 'sitename',
-    },
-    {
-         Header: 'Street Address',
-         accessor: 'address',
-    },
-    {
-         Header: 'City',
-         accessor: 'city',
-    },
-    {
-         Header: 'State',
-         accessor: 'state',
-    },
-    {
-         Header: 'Postcode',
-         accessor: 'postcode',
-    },
-    {
-         Header: 'Country',
-         accessor: 'country',
-    },
-    {
-         Header: 'Manager ID',
-         accessor: 'managerid',
-    },
-    {
-         Header: 'Bonus',
-         accessor: 'bonus',
-    }
-
+      {
+        Header: "ID",
+        accessor: "id",
+      },
+      {
+        Header: "FTE",
+        accessor: "fte",
+      },
+      {
+        Header: "Job name",
+        accessor: "jobname",
+      },
+      {
+        Header: "Total compensation",
+        accessor: "compensation",
+      },
+      {
+        Header: "Employee type",
+        accessor: "employeetype",
+      },
+      {
+        Header: "Gender",
+        accessor: "gender",
+      },
+      {
+        Header: "Birth year",
+        accessor: "birthyear",
+      },
+      {
+        Header: "Job description",
+        accessor: "jobdesc",
+      },
+      {
+        Header: "Job family",
+        accessor: "jobfamily",
+      },
+      {
+        Header: "Employee level",
+        accessor: "employeelevel",
+      },
+      {
+        Header: "Org level 1",
+        accessor: "level1",
+      },
+      {
+        Header: "Org level 2",
+        accessor: "level2",
+      },
+      {
+        Header: "Org level 3",
+        accessor: "level3",
+      },
+      {
+        Header: "Site name",
+        accessor: "sitename",
+      },
+      {
+        Header: "Street Address",
+        accessor: "address",
+      },
+      {
+        Header: "City",
+        accessor: "city",
+      },
+      {
+        Header: "State",
+        accessor: "state",
+      },
+      {
+        Header: "Postcode",
+        accessor: "postcode",
+      },
+      {
+        Header: "Country",
+        accessor: "country",
+      },
+      {
+        Header: "Manager ID",
+        accessor: "managerid",
+      },
+      {
+        Header: "Bonus",
+        accessor: "bonus",
+      },
     ],
-      
+
     []
-  )
+  );
 
   // We'll start our table without any data
-  const [data, setData] = React.useState([])
-  const [loading, setLoading] = React.useState(false)
-  const [pageCount, setPageCount] = React.useState(0)
-  const fetchIdRef = React.useRef(0)
+  const [data, setData] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
+  const [pageCount, setPageCount] = React.useState(0);
+  const fetchIdRef = React.useRef(0);
 
   const fetchData = React.useCallback(({ pageSize, pageIndex }) => {
     // This will get called when the table needs new data
@@ -298,41 +295,41 @@ function App() {
     // even a server. But for this example, we'll just fake it.
 
     // Give this fetch an ID
-    const fetchId = ++fetchIdRef.current
+    const fetchId = ++fetchIdRef.current;
 
     // Set the loading state
-    setLoading(true)
+    setLoading(true);
 
     // We'll even set a delay to simulate a server here
     setTimeout(() => {
       // Only update the data if this is the latest fetch
       if (fetchId === fetchIdRef.current) {
-        const startRow = pageSize * pageIndex
-        const endRow = startRow + pageSize
-        setData(serverData.slice(startRow, endRow))
+        const startRow = pageSize * pageIndex;
+        const endRow = startRow + pageSize;
+        setData(serverData.slice(startRow, endRow));
 
         // Your server could send back total page count.
         // For now we'll just fake it, too
-        setPageCount(Math.ceil(serverData.length / pageSize))
+        setPageCount(Math.ceil(serverData.length / pageSize));
 
-        setLoading(false)
+        setLoading(false);
       }
-    }, 1000)
-  }, [])
+    }, 1000);
+  }, []);
 
   return (
-  <>    
-<Styles>
-      <Table
-        columns={columns}
-        data={data}
-        fetchData={fetchData}
-        loading={loading}
-        pageCount={pageCount}
-      />
-    </Styles>
-</>
-  )
+    <>
+      <Styles>
+        <Table
+          columns={columns}
+          data={data}
+          fetchData={fetchData}
+          loading={loading}
+          pageCount={pageCount}
+        />
+      </Styles>
+    </>
+  );
 }
 
-export default App
+export default App;

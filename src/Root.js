@@ -14,9 +14,9 @@ const Root = () => {
         <Switch>
         <Route component={Home} exact path="/" />
         <Route component={UploadPage} path="/data_requirement" />
-        <Route component={DataUpload} path="/data_upload" />
+        {/* <Route component={DataUpload} path="/data_upload" /> */}
         <Route component={CheckData} path="/check_data" />
-        <Route component={Practice} path="/practice" />
+        <Route component={Practice} path="/data_upload" />
         </Switch>
         
         </>
