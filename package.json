@@ -9,14 +9,17 @@
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
     "namor": "^2.0.2",
+    "papaparse": "^5.2.0",
     "react": "^16.13.1",
     "react-csv": "^2.0.3",
     "react-dom": "^16.13.1",
     "react-dropzone": "^11.0.1",
+    "react-excel-renderer": "^1.1.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-table": "^7.1.0",
+    "reactstrap": "^8.4.1",
     "styled-components": "^5.1.1"
   },
   "scripts": {

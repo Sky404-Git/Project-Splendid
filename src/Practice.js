@@ -1,13 +1,12 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import LogoutButton from "../components/LogoutButton";
-import UploadTopBar from "../components/UploadTopBar";
-import DragAndDrop from "../components/DragAndDrop";
-import Footer from "../components/Footer";
-import "./DataUpload.css";
+import Navbar from "./components/Navbar";
+import LogoutButton from "./components/LogoutButton";
+import UploadTopBar from "./components/UploadTopBar";
+import Footer from "./components/Footer";
+import UploadFile from "./UploadFile";
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 const head1 = "Upload workforce data for Faethm"
-
 
 const DataUpload = () => {
     return (
@@ -31,9 +30,11 @@ const DataUpload = () => {
                       imagesrc4 ="./images/4b.png"
                       imagesrc5 ="./images/5b.png"
                     />
-                    <DragAndDrop/>
                     
-                </div>
+                    <UploadFile/> 
+
+                 </div>
+                
             </div>
             <Footer
             backlink = "/data_requirement"
