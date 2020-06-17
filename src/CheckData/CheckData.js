@@ -87,8 +87,8 @@ class CheckData extends React.Component {
               className="container-fluid"
               style={{
                 height: "600px",
-                width: "auto",
-                marginLeft: "-20px",
+                width: "82%",
+                marginLeft: "15%",
                 marginTop: "50px",
                 overflowX: "scroll",
                 overflowY: "scroll",
@@ -100,7 +100,7 @@ class CheckData extends React.Component {
                 tableClassName="ExcelTable2007"
                 tableHeaderRowClass="heading"
               />
-              {alert("Your file has been uploaded and ready to show")}
+              
             </div>
           </div>
           <Footer backlink="/data_upload" contlink="/check_data" />
@@ -112,8 +112,10 @@ class CheckData extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
+    
     rows: state.data ? state.data.rows : [],
     cols: state.data ? state.data.cols : [],
+    
   };
 };
 export default connect(mapStateToProps, null)(CheckData);

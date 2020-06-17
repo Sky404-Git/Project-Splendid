@@ -99,7 +99,7 @@ class UploadFile extends Component {
                   <InputGroupAddon addonType="prepend">
                     <Button
                       color="info"
-                      style={{ color: "white", marginTop: "20px" }}
+                      style={{ color: "white", marginTop: "40px" }}
                       onClick={this.openFileBrowser.bind(this)}
                     >
                       <i className="cui-file"></i> Browse to upload&hellip;
@@ -121,7 +121,7 @@ class UploadFile extends Component {
                     value={this.state.uploadedFileName}
                     readOnly
                     invalid={this.state.isFormInvalid}
-                    style={{ marginTop: "20px" }}
+                    style={{ marginTop: "40px" }}
                   />
                   <FormFeedback>
                     <Fade
@@ -135,6 +135,7 @@ class UploadFile extends Component {
                 </InputGroup>
               </Col>
             </FormGroup>
+            
           </form>
 
           {/* {this.state.dataLoaded && 
@@ -146,6 +147,7 @@ class UploadFile extends Component {
           </div>  
         
         </div>} */}
+        
         </div>
       </div>
     );

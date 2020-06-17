@@ -12,7 +12,7 @@ const DataUpload = () => {
     return (
         <>
         <div className="container-fluid">
-            <div className="row">
+            <div className="row" style={{marginBottom:"245px"}}>
                 <div className="col-1" style={{ marginRight:"6%"}}>
                     <Navbar/>
                 </div>
