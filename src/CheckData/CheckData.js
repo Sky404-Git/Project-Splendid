@@ -10,26 +10,35 @@ import { OutTable, ExcelRenderer } from "react-excel-renderer";
 
 import "./CheckData.css";
 import { connect } from "react-redux";
+import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 let head1 = "Upload workforce data for Faethm";
 let head2 = "USER DATA TABLE";
 
 class CheckData extends React.Component {
   render() {
-    // console.log(this.props.rows[0]);
-    // console.log(this.props.rows[1]);
-    // console.log(this.props.rows[2]);
+    console.log(this.props.rows[0]);
+    console.log(this.props.rows[1]);
+    console.log(this.props.rows[2]);
 
     return (
       <>
         <div className="container-fluid">
-          <div className="row">
-            <div className="col-1" style={{ marginRight: "6%" }}>
-              <Navbar />
-            </div>
+            <div className="row" style={{marginBottom:"16.3%"}}>
+            <div className="container-fluid" style={{width:"95%",height:"80px", marginRight:"3%", marginBottom:"-6%"}}>
+      <div className="container" style={{width:"auto",height:"auto", float:"left"}}>
+      <NavLink exact to="/" ><img src="./images/faethm.svg" alt="logo" style={{height:"65px", width:"65px"}}/></NavLink>
+      </div>
+     
+      </div>
+      <div className="col-1" style={{width:"1%", marginRight:"4%"}}>
+                    
+                    
+                    </div>
             <div className="col-10">
               <div className="container-fluid" style={{ height: "80px" }}>
-                <LogoutButton />
+                
               </div>
               <div className="container-fluid" style={{ marginBottom: "40px" }}>
                 <h1>{head1}</h1>
@@ -88,8 +97,8 @@ class CheckData extends React.Component {
               style={{
                 height: "600px",
                 width: "82%",
-                marginLeft: "15%",
-                marginTop: "50px",
+                marginLeft: "13%",
+                marginTop: "-15%",
                 overflowX: "scroll",
                 overflowY: "scroll",
               }}
@@ -103,7 +112,7 @@ class CheckData extends React.Component {
               
             </div>
           </div>
-          <Footer backlink="/data_upload" contlink="/check_data" />
+          <Footer backlink="/data_upload" contlink="/job_matching" />
         </div>
       </>
     );
@@ -112,10 +121,8 @@ class CheckData extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    
     rows: state.data ? state.data.rows : [],
     cols: state.data ? state.data.cols : [],
-    
   };
 };
 export default connect(mapStateToProps, null)(CheckData);

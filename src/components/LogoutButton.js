@@ -1,17 +1,19 @@
 import React from 'react';
 import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+import {Link} from "react-router-dom";
 
 const LogoutButton = () => {
     return (
     <>
-        <button className="btn dropdown-toggle border" data-toggle="dropdown" style={{color:"white", float:"right", margin:"18px 100px 0px 0px"}}></button>
-        <div className="dropdown-menu">
-        <a className="dropdown-item" href=" ">Profile</a>
-        <a className="dropdown-item" href=" ">Settings</a>
-        <div className="dropdown-divider"></div>
-        <a className="dropdown-item" href=" ">Log out</a>
-      
+    <div class="dropdown">
+    <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown" style={{float:"right", margin:"20px 0px 0px 0px"}}>
+      Job Search
+    </button>
+    <div className="dropdown-menu">
+      <Link to="./searchdesc" target="_blank" className="dropdown-item">Search Occupation title and description</Link>
     </div>
+  </div>
+    
     </>
     );
 };
