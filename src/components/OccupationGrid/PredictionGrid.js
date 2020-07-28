@@ -13,12 +13,14 @@ const PredictionGrid = ({inputValue, ...props }) => {
   return (
     <ul className={design.occupation_grid}>
       {items.filter(item =>
-        (item[0].toLowerCase().includes(inputValue.toLowerCase())
+        (item[0].toLowerCase().includes(inputValue.toLowerCase()),
+        item[21].toLowerCase().includes(inputValue.toLowerCase())
         ||item[1].toLowerCase().includes(inputValue.toLowerCase())),)
         .length > 0 ? (
         items
           .filter(item =>
-            (item[0].toLowerCase().includes(inputValue.toLowerCase())
+            (item[0].toLowerCase().includes(inputValue.toLowerCase()),
+            item[21].toLowerCase().includes(inputValue.toLowerCase())
             ||item[1].toLowerCase().includes(inputValue.toLowerCase())),
           )
           .map(item => (
