@@ -43,7 +43,7 @@ const Prediction = ({role_name,recommended_title,org_level_1,compo_bracket,total
   
       return (
         
-        <li style={{backgroundColor:"#ffc107"}} className={design.occupation_card} key={role_name}>
+        <li style={{backgroundColor:"#006600"}} className={design.occupation_card} key={role_name}>
         <div className={design.content}>
         <h2 className={design.role_name}>Role name:</h2><span>{role_name}</span> <br/>
         <h2 className={design.recommended_title}>Recommended Title:</h2><span>{recommended_title}</span><br/>
