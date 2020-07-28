@@ -11,10 +11,19 @@
 .occupation_card h2{
   
     color:orange;
+    
   
 }
 .occupation_card .content {
   padding: 28px;
+}
+
+.occupation_card .content h2{
+  display: inline-block;
+}
+
+.occupation_card .content span{
+  margin-left: 2%;
 }
 
 .occupation_card img {

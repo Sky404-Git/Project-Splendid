@@ -34,7 +34,12 @@ const PredictionGrid = ({inputValue, ...props }) => {
               pred_title_8={item[14]}
               pred_title_9={item[15]}
               pred_title_10={item[16]}
-              role_name={item[1]}
+              role_name={item[0]}
+              recommended_title={item[1]}
+              org_level_1={item[4]}
+              compo_bracket={item[17]}
+              total_fte={item[18]}
+              confidence={item[21]}
               
             />
           ))
