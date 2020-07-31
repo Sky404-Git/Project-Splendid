@@ -3,11 +3,64 @@ import PropTypes from 'prop-types';
 import design from './Occupationgrid.module.css';
 import Prediction from '../OccupationCard/Prediction';
 import { connect } from 'react-redux';
+import Occupations from '../OccupationCard/occupations_list.json';
+import OccuDescGrid from './OccuDescGrid'
 
 const PredictionGrid = ({inputValue, ...props }) => {
   // console.log(props.rows);
-  const items = props.rows.slice(1);
+  var items = props.rows.slice(1);
   // console.log(items[0]);
+
+  const handlePredictionChange = (itemId, value) => {
+    // console.log(item[0], item[item.length - 1].newPrediction)
+    items = items.map(item => {
+      if (item[0] === itemId) {
+        const occupation = Occupations.filter(occ => occ.occ_title === value)[0];
+        return item.slice(0, 27).push(occupation.occ_code, occupation.occ_title, occupation.occ_desc);
+        console.log(item)
+      } else {
+        return item
+      }
+      }
+    )
+  }
+
+  
+  console.log(items);
+  for(let a=0;a<items.length;a++){
+  if(item[0]===occupation.occ_title)
+  {
+      "role_name": items[0],
+      "role_description": items[1],
+      "role_description": items[2],
+      "role_family": items[3],
+      "org_level_1": items[4],
+      "org_level_2": items[5],
+      "org_level_3": items[6],
+      "pred_title_1": items[7],
+      "pred_title_2": item[8],
+      "pred_title_3": item[9],
+      "pred_title_4": item[10],
+      "pred_title_5": item[11],
+      "pred_title_6": item[12],
+      "pred_title_7": item[13],
+      "pred_title_8": item[14],
+      "pred_title_9": item[15],
+      "pred_title_10": item[16],
+      "compo_bracket": item[17],
+      "total_fte": item[18],
+      "has_reports_ratio": item[19],
+      "has_mgr_reports_ratio": item[20],
+      "confidence": item[21],
+      "Review Required": item[22],
+      "Predicted Occ Name": occupation.occ_title,
+      "Selected Occ Code": occupation.occ_code,
+      "Selected Occ Name": occupation.occ_title,
+      "Occ Description": occupation.occ_desc     
+    }
+  }
+
+  
 
   const invalidSearch = 'Sorry! Keywords NOT FOUND';
   return (
@@ -42,7 +95,7 @@ const PredictionGrid = ({inputValue, ...props }) => {
               compo_bracket={item[17]}
               total_fte={item[18]}
               confidence={item[21]}
-              
+              handlePredictionChange={handlePredictionChange}
             />
           ))
       ) : (

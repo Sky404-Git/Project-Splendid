@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 import design from './OccupationCard.module.css';
 import { connect } from 'react-redux';
 
-const Prediction = ({role_name,recommended_title,org_level_1,compo_bracket,total_fte,confidence,pred_title_1,pred_title_2,pred_title_3,pred_title_4,pred_title_5,pred_title_6,pred_title_7,pred_title_8,pred_title_9,pred_title_10, ...props}) => {
-  console.log(props.rows[0]);
-
+const Prediction = ({role_name,recommended_title,org_level_1,compo_bracket,total_fte,confidence,pred_title_1,pred_title_2,pred_title_3,pred_title_4,pred_title_5,pred_title_6,pred_title_7,pred_title_8,pred_title_9,pred_title_10, handlePredictionChange,...props}) => {
   var akash = confidence;
   
   if(akash === "High"){
   
     return (
       
-      <li style={{backgroundColor:"#b30000"}} className={design.occupation_card} key={role_name}>
+      <li 
+      style={{backgroundColor:"#b30000"}} 
+        className={design.occupation_card} 
+        key={role_name}>
       <div className={design.content}>
       <h2 className={design.role_name}>Role name:</h2><span>{role_name}</span> <br/>
       <h2 className={design.recommended_title}>Recommended Title:</h2><span>{recommended_title}</span><br/>
@@ -21,7 +22,7 @@ const Prediction = ({role_name,recommended_title,org_level_1,compo_bracket,total
       <h2 className={design.total_fte}>Total FTE:</h2><span>{total_fte}</span><br/>
       <h2 className={design.confidence}>Confidence:</h2><span>{confidence}</span><br/>
       <h2 className={design.confidence}>Choose predicted Occupation Name:</h2>  
-        <select name="title">
+        <select name="title" onChange={(event) => handlePredictionChange(role_name, event.target.value)}>
         <option value={pred_title_1} className={design.descr}>1. {pred_title_1}</option>
         <option value={pred_title_2} className={design.descr}>2. {pred_title_2}</option>
         <option value={pred_title_3} className={design.descr}>3. {pred_title_3}</option>
@@ -52,7 +53,7 @@ const Prediction = ({role_name,recommended_title,org_level_1,compo_bracket,total
         <h2 className={design.total_fte}>Total FTE:</h2><span>{total_fte}</span><br/>
         <h2 className={design.confidence}>Confidence:</h2><span>{confidence}</span><br/>
         <h2 className={design.confidence}>Choose predicted Occupation Name:</h2>  
-          <select name="title">
+          <select name="title" onChange={(event) => handlePredictionChange(role_name, event.target.value)}>
           <option value={pred_title_1} className={design.descr}>1. {pred_title_1}</option>
           <option value={pred_title_2} className={design.descr}>2. {pred_title_2}</option>
           <option value={pred_title_3} className={design.descr}>3. {pred_title_3}</option>
@@ -83,7 +84,7 @@ const Prediction = ({role_name,recommended_title,org_level_1,compo_bracket,total
           <h2 className={design.total_fte}>Total FTE:</h2><span>{total_fte}</span><br/>
           <h2 className={design.confidence}>Confidence:</h2><span>{confidence}</span><br/>
           <h2 className={design.confidence}>Choose predicted Occupation Name:</h2>  
-            <select name="title">
+            <select name="title" onChange={(event) => handlePredictionChange(role_name, event.target.value)}>
             <option value={pred_title_1} className={design.descr}>1. {pred_title_1}</option>
             <option value={pred_title_2} className={design.descr}>2. {pred_title_2}</option>
             <option value={pred_title_3} className={design.descr}>3. {pred_title_3}</option>
