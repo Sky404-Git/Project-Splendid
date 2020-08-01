@@ -9,7 +9,6 @@ import LogoutButton from './components/LogoutButton';
 import UploadTopBar from "./components/UploadTopBar";
 import Footer from "./components/Footer";
 import {NavLink} from "react-router-dom";
-import { Button } from 'reactstrap';
 
 class Jobmatching extends Component {
   state = {
@@ -70,7 +69,6 @@ class Jobmatching extends Component {
         <SearchBar value={inputValue} onChange={this.searchInput} />
         <PredictionGrid inputValue={inputValue} items={Occupations} />
       </section>
-      <Button className="btn bg-primary" style={{marginLeft:"46%", marginTop:"6%"}}>Save your data</Button>
       <Footer
             backlink = "/check_data"
             contlink = "/insight"

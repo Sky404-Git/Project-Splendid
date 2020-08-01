@@ -5,6 +5,9 @@ import Prediction from '../OccupationCard/Prediction';
 import { connect } from 'react-redux';
 import Occupations from '../OccupationCard/occupations_list.json';
 import OccuDescGrid from './OccuDescGrid'
+import { Button } from 'reactstrap';
+import { CSVLink} from "react-csv";
+
 
 const PredictionGrid = ({inputValue, ...props }) => {
   // console.log(props.rows);
@@ -16,54 +19,60 @@ const PredictionGrid = ({inputValue, ...props }) => {
     items = items.map(item => {
       if (item[0] === itemId) {
         const occupation = Occupations.filter(occ => occ.occ_title === value)[0];
-        return item.slice(0, 27).push(occupation.occ_code, occupation.occ_title, occupation.occ_desc);
-        console.log(item)
+        const temp = item.slice(0, 23);
+        temp.push.apply(temp, [value,occupation.occ_code, occupation.occ_title, occupation.occ_desc]);
+        // console.log(temp);
+        return temp;
       } else {
         return item
       }
-      }
+    }
     )
+    // console.log(items); 
   }
 
-  
-  console.log(items);
+
+  const finalData=()=>{
+    var json_data = [];
   for(let a=0;a<items.length;a++){
-  if(item[0]===occupation.occ_title)
-  {
-      "role_name": items[0],
-      "role_description": items[1],
-      "role_description": items[2],
-      "role_family": items[3],
-      "org_level_1": items[4],
-      "org_level_2": items[5],
-      "org_level_3": items[6],
-      "pred_title_1": items[7],
-      "pred_title_2": item[8],
-      "pred_title_3": item[9],
-      "pred_title_4": item[10],
-      "pred_title_5": item[11],
-      "pred_title_6": item[12],
-      "pred_title_7": item[13],
-      "pred_title_8": item[14],
-      "pred_title_9": item[15],
-      "pred_title_10": item[16],
-      "compo_bracket": item[17],
-      "total_fte": item[18],
-      "has_reports_ratio": item[19],
-      "has_mgr_reports_ratio": item[20],
-      "confidence": item[21],
-      "Review Required": item[22],
-      "Predicted Occ Name": occupation.occ_title,
-      "Selected Occ Code": occupation.occ_code,
-      "Selected Occ Name": occupation.occ_title,
-      "Occ Description": occupation.occ_desc     
-    }
+  json_data.push({
+      "role_name": items[a][0],
+      "role_description": items[a][1],
+      "role_description": items[a][2],
+      "role_family": items[a][3],
+      "org_level_1": items[a][4],
+      "org_level_2": items[a][5],
+      "org_level_3": items[a][6],
+      "pred_title_1": items[a][7],
+      "pred_title_2": items[a][8],
+      "pred_title_3": items[a][9],
+      "pred_title_4": items[a][10],
+      "pred_title_5": items[a][11],
+      "pred_title_6": items[a][12],
+      "pred_title_7": items[a][13],
+      "pred_title_8": items[a][14],
+      "pred_title_9": items[a][15],
+      "pred_title_10": items[a][16],
+      "compo_bracket": items[a][17],
+      "total_fte": items[a][18],
+      "has_reports_ratio": items[a][19],
+      "has_mgr_reports_ratio": items[a][20],
+      "confidence": items[a][21],
+      "Review Required": items[a][22],
+      "Predicted Occ Name": items[a][23],
+      "Selected Occ Code": items[a][24],
+      "Selected Occ Name": items[a][25],
+      "Occ Description": items[a][26]     
+    })
   }
+  console.log(json_data);
+}
 
   
 
   const invalidSearch = 'Sorry! Keywords NOT FOUND';
   return (
+    <React.Fragment>
     <ul className={design.occupation_grid}>
       {items.filter(item =>
         (item[0].toLowerCase().includes(inputValue.toLowerCase()),
@@ -97,11 +106,15 @@ const PredictionGrid = ({inputValue, ...props }) => {
               confidence={item[21]}
               handlePredictionChange={handlePredictionChange}
             />
+
           ))
-      ) : (
+      )
+       : (
         <li style={{color:"orange", marginLeft:"38%"}}>{invalidSearch}</li>)
       }
     </ul>
+     <Button className="btn bg-primary" style={{marginLeft:"46%", marginTop:"6%" }} onClick={finalData}>Export data</Button> 
+    </React.Fragment> 
   );
 };
 
@@ -130,6 +143,7 @@ Prediction.propTypes = {
     }),
   ),
 };
+
 
 const mapStateToProps = (state) => {
   return {
