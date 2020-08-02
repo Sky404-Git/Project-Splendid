@@ -14,12 +14,14 @@ const PredictionGrid = ({inputValue, ...props }) => {
     <ul className={design.occupation_grid}>
       {items.filter(item =>
         (item[0].toLowerCase().includes(inputValue.toLowerCase()),
+        
         item[21].toLowerCase().includes(inputValue.toLowerCase())
         ||item[1].toLowerCase().includes(inputValue.toLowerCase())),)
         .length > 0 ? (
         items
           .filter(item =>
             (item[0].toLowerCase().includes(inputValue.toLowerCase()),
+            
             item[21].toLowerCase().includes(inputValue.toLowerCase())
             ||item[1].toLowerCase().includes(inputValue.toLowerCase())),
           )
@@ -59,7 +61,7 @@ Prediction.propTypes = {
     PropTypes.shape({
       role_name: PropTypes.string,
       recommended_title: PropTypes.string,
-      org_title_1: PropTypes.string,
+      org_level_1: PropTypes.string,
       pred_title_1: PropTypes.string,
       pred_title_2: PropTypes.string,
       pred_title_3: PropTypes.string,
