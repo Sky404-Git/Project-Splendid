@@ -31,7 +31,7 @@ const PredictionGrid = ({inputValue, ...props }) => {
     // console.log(items); 
   }
 
-
+  
   const finalData=()=>{
     var json_data = [];
   for(let a=0;a<items.length;a++){
@@ -64,8 +64,11 @@ const PredictionGrid = ({inputValue, ...props }) => {
       "Selected Occ Name": items[a][25],
       "Occ Description": items[a][26]     
     })
-  }
-  console.log(json_data);
+    }
+
+    this.props.history.push(json_data);
+      console.log(json_data);
+  
 }
 
   

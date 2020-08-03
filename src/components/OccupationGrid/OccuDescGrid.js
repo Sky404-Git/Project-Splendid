@@ -6,7 +6,7 @@ import OccuDesc from '../OccupationCard/OccuDesc';
 const OccuDescGrid = ({ items, inputValue }) => {
   const invalidSearch = 'Sorry! Keywords NOT FOUND';
   return (
-    <ul className={design.occupation_grid}>
+    <div className="row">
       {items.filter(item =>
         (item.occ_title.toLowerCase().includes(inputValue.toLowerCase())
         ||item.occ_crn.toLowerCase().includes(inputValue.toLowerCase())
@@ -30,9 +30,9 @@ const OccuDescGrid = ({ items, inputValue }) => {
             />
           ))
       ) : (
-        <li style={{color:"orange", marginLeft:"38%"}}>{invalidSearch}</li>
+        <div style={{color:"orange", marginLeft:"38%"}}>{invalidSearch}</div>
       )}
-    </ul>
+    </div>
   );
 };
 
