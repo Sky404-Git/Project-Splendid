@@ -10,6 +10,10 @@ import { CSVLink} from "react-csv";
 
 
 const PredictionGrid = ({inputValue, ...props }) => {
+  const [state, setState] = React.useState({
+    json_data: []
+  })
+
   // console.log(props.rows);
   var items = props.rows.slice(1);
   // console.log(items[0]);
@@ -64,14 +68,9 @@ const PredictionGrid = ({inputValue, ...props }) => {
       "Selected Occ Name": items[a][25],
       "Occ Description": items[a][26]     
     })
-    }
-
-    this.props.history.push(json_data);
-      console.log(json_data);
-  
+  }
+  setState({json_data: json_data});
 }
-
-  
 
   const invalidSearch = 'Sorry! Keywords NOT FOUND';
   return (
@@ -118,7 +117,10 @@ const PredictionGrid = ({inputValue, ...props }) => {
         <li style={{color:"orange", marginLeft:"38%"}}>{invalidSearch}</li>)
       }
     </ul>
-     <Button className="btn bg-primary" style={{marginLeft:"46%", marginTop:"6%" }} onClick={finalData}>Export data</Button> 
+     <Button className="btn bg-primary" style={{marginLeft:"46%", marginTop:"6%" }} onClick={finalData}>Export data</Button>
+     {state.json_data.length > 0 ?
+     <CSVLink data={state.json_data}>Download Data File</CSVLink>
+    : undefined }
     </React.Fragment> 
   );
 };
