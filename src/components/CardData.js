@@ -16,8 +16,8 @@ const CardData = [
     {
         id: 3,
         imgsrc : "./images/Icon8.png",
-        head:"3. Check data",
-        body:"A chance to clean up your data if needed so all charts can display accurately.",
+        head:"3. View data",
+        body:"A chance to view what you have uploaded.",
         link : "#"
     },
     {

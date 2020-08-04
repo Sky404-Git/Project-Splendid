@@ -22,7 +22,7 @@ const Prediction = ({role_name,recommended_title,org_level_1,compo_bracket,total
       <h2 className={design.total_fte}>Total FTE:</h2><span>{total_fte}</span><br/>
       <h2 className={design.confidence}>Confidence:</h2><span>{confidence}</span><br/>
       <h2 className={design.confidence}>Choose predicted Occupation Name:</h2>  
-        <select name="title" onChange={(event) => {handlePredictionChange(role_name, event.target.value)}}>  
+        <select name="title" style={{width:"300px"}} onChange={(event) => {handlePredictionChange(role_name, event.target.value)}}>  
         <option value={pred_title_1} className={design.descr}>1. {pred_title_1}</option>
         <option value={pred_title_2} className={design.descr}>2. {pred_title_2}</option>
         <option value={pred_title_3} className={design.descr}>3. {pred_title_3}</option>
@@ -53,7 +53,7 @@ const Prediction = ({role_name,recommended_title,org_level_1,compo_bracket,total
         <h2 className={design.total_fte}>Total FTE:</h2><span>{total_fte}</span><br/>
         <h2 className={design.confidence}>Confidence:</h2><span>{confidence}</span><br/>
         <h2 className={design.confidence}>Choose predicted Occupation Name:</h2>  
-          <select name="title" onChange={(event) => handlePredictionChange(role_name, event.target.value)}>
+          <select name="title" style={{width:"300px"}} onChange={(event) => handlePredictionChange(role_name, event.target.value)}>
           <option value={pred_title_1} className={design.descr}>1. {pred_title_1}</option>
           <option value={pred_title_2} className={design.descr}>2. {pred_title_2}</option>
           <option value={pred_title_3} className={design.descr}>3. {pred_title_3}</option>
@@ -84,7 +84,7 @@ const Prediction = ({role_name,recommended_title,org_level_1,compo_bracket,total
           <h2 className={design.total_fte}>Total FTE:</h2><span>{total_fte}</span><br/>
           <h2 className={design.confidence}>Confidence:</h2><span>{confidence}</span><br/>
           <h2 className={design.confidence}>Choose predicted Occupation Name:</h2>  
-            <select name="title" onChange={(event) => handlePredictionChange(role_name, event.target.value)}>
+            <select name="title" style={{width:"300px"}} onChange={(event) => handlePredictionChange(role_name, event.target.value)}>
             <option value={pred_title_1} className={design.descr}>1. {pred_title_1}</option>
             <option value={pred_title_2} className={design.descr}>2. {pred_title_2}</option>
             <option value={pred_title_3} className={design.descr}>3. {pred_title_3}</option>

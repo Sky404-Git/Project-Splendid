@@ -28,7 +28,7 @@ class Searchdesc extends Component {
       </div>
       <LogoutButton/>
       </div>
-      <div className="container" style={{margin:"0% 0% -3% 11.5%"}}>
+      <div className="container" style={{margin:"0% 0% 3% 11.5%"}}>
                         <h2 style={{fontSize:"1.5rem"}}>Search for Occupation Title, Description, Role Name and Core Tasks</h2>
                     </div>
       <section className="Occupations">

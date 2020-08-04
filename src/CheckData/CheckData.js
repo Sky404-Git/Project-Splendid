@@ -18,10 +18,6 @@ let head2 = "USER DATA TABLE";
 
 class CheckData extends React.Component {
   render() {
-    console.log(this.props.rows[0]);
-    console.log(this.props.rows[1]);
-    console.log(this.props.rows[2]);
-
     return (
       <>
         <div className="container-fluid">
@@ -51,44 +47,8 @@ class CheckData extends React.Component {
                 imagesrc5="./images/5b.png"
               />
               <h2>{head2}</h2>
-              <div className="container-fluid">
-                <div id="accordion">
-                  <WarningCard
-                    classname="card bg-danger"
-                    link="#collapseOne"
-                    title="High severity warnings"
-                    id="collapseOne"
-                    body="Warning message here !!"
-                  />
-                  <br></br>
-                  <WarningCard
-                    classname="card bg-warning"
-                    link="#collapseTwo"
-                    title="Medium severity warnings"
-                    id="collapseTwo"
-                    body="Warning message here !!"
-                  />
-                  <br></br>
-                  <WarningCard
-                    classname="card bg-info"
-                    link="#collapseThree"
-                    title="Low severity warnings"
-                    id="collapseThree"
-                    body="Warning message here !!"
-                  />
-                </div>
-              </div>
-              <div
-                className="container-fluid"
-                style={{
-                  marginTop: "10px",
-                  marginBottom: "30px",
-                  overflowX: "auto",
-                  padding: "0px",
-                }}
-              >
-                {/* <CheckDataTable /> */}
-              </div>
+             
+              
             </div>
           </div>
           <div>

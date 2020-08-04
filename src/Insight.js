@@ -7,6 +7,7 @@ import UploadTopBar from "./components/UploadTopBar";
 import {Link} from "react-router-dom";
 import {NavLink} from "react-router-dom";
 import { Button } from 'reactstrap';
+import { CSVLink} from "react-csv";
 
 class Insight extends Component {
   state = {
@@ -20,9 +21,16 @@ class Insight extends Component {
   };
 
   render() {
-    const { inputValue } = this.state;
+    const { inputValue } = this.state; 
+    
+     const {newdata} = this.props.location;
+    
     return (
+      
       <>
+      
+      
+      
      <div className="container-fluid">
             <div className="row">
             <div className="container-fluid" style={{width:"95%",height:"80px", marginRight:"3%", marginBottom:"-6%"}}>
@@ -60,7 +68,8 @@ class Insight extends Component {
                         <h1 style={{margin:"2% 0 0 30%"}}>Ready to download your final report?</h1>
                     </div>
       
-      <Button className="btn bg-primary" style={{marginLeft:"44%", marginTop:"2%", marginBottom:"8.8%"}}>Download excel report</Button>
+      <CSVLink data={newdata} className="btn bg-primary" style={{marginLeft:"44%", marginTop:"2%", marginBottom:"8.8%", color:"white"}}>Download Data File</CSVLink>
+
       <div className="container-fluid" style={{height:"100px", marginTop:"30px", backgroundColor:"#1a2e3f", alignItems:"center"}}>
       <Link to="./job_matching" className="btn btn-primary" style={{backgroundColor:"#253848", color:"white",width:"100px", height:"40px", textAlign:"center", marginLeft:"4%", marginTop:"2%"}}>Back</Link>
         

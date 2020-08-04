@@ -7,7 +7,6 @@ import Occupations from './components/OccupationCard/model_results.json';
 import SearchBar from './components/SearchBar/SearchBar';
 import LogoutButton from './components/LogoutButton';
 import UploadTopBar from "./components/UploadTopBar";
-import Footer from "./components/Footer";
 import {NavLink} from "react-router-dom";
 
 class Jobmatching extends Component {
@@ -69,10 +68,7 @@ class Jobmatching extends Component {
         <SearchBar value={inputValue} onChange={this.searchInput} />
         <PredictionGrid inputValue={inputValue} items={Occupations} />
       </section>
-      <Footer
-            backlink = "/check_data"
-            contlink = "/insight"
-            />
+      
       </>
     );
   }

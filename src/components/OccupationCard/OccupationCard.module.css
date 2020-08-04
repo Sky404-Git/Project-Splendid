@@ -15,7 +15,8 @@
   
 }
 .occupation_card .content {
-  padding: 28px;
+  padding: 16px;
+  line-height: 0.5;
 }
 
 .occupation_card .content h2{

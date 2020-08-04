@@ -7,12 +7,16 @@ import Occupations from '../OccupationCard/occupations_list.json';
 import OccuDescGrid from './OccuDescGrid'
 import { Button } from 'reactstrap';
 import { CSVLink} from "react-csv";
+import { data } from 'jquery';
+import {Link} from "react-router-dom";
 
 
 const PredictionGrid = ({inputValue, ...props }) => {
   const [state, setState] = React.useState({
     json_data: []
   })
+
+  const newdata = [];
 
   // console.log(props.rows);
   var items = props.rows.slice(1);
@@ -35,7 +39,6 @@ const PredictionGrid = ({inputValue, ...props }) => {
     // console.log(items); 
   }
 
-  
   const finalData=()=>{
     var json_data = [];
   for(let a=0;a<items.length;a++){
@@ -117,10 +120,15 @@ const PredictionGrid = ({inputValue, ...props }) => {
         <li style={{color:"orange", marginLeft:"38%"}}>{invalidSearch}</li>)
       }
     </ul>
-     <Button className="btn bg-primary" style={{marginLeft:"46%", marginTop:"6%" }} onClick={finalData}>Export data</Button>
-     {state.json_data.length > 0 ?
-     <CSVLink data={state.json_data}>Download Data File</CSVLink>
-    : undefined }
+     <Button className="btn bg-primary" style={{marginLeft:"46%", marginTop:"6%" }} onClick={finalData}>Save your data</Button>
+     
+<div className="container-fluid" style={{height:"100px", marginTop:"30px", backgroundColor:"#1a2e3f", alignItems:"center"}}>
+      <Link to="./check_data" className="btn btn-primary" style={{backgroundColor:"#253848", color:"white",width:"100px", height:"40px", textAlign:"center", marginLeft:"4%", marginTop:"2%"}}>Back</Link>
+      <Link to={{pathname: "/insight", newdata: state.json_data}}
+       className="btn btn-primary" style={{backgroundColor:"#253848", color:"white",width:"100px", height:"40px", textAlign:"center", float:"right", marginRight:"4%", marginTop:"2%"}}
+      >Continue</Link> 
+</div>
+
     </React.Fragment> 
   );
 };

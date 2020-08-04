@@ -16,7 +16,7 @@ const UploadTopBar = (props) => {
                     </div>
                     <div className="container-fluid mx-3" style={{width:"179px"}}>
                         <img src={props.imagesrc3} alt="icon" style={{height:"30px", width:"30px", marginTop:"10px"}}></img>
-                        <p style={{fontSize:"14px", color:"white", margin:"-28px 0px 20px 40px"}}>Check data</p>
+                        <p style={{fontSize:"14px", color:"white", margin:"-28px 0px 20px 40px"}}>View data</p>
                     </div>
                     <div className="container-fluid mx-3" style={{width:"179px"}}>
                         <img src={props.imagesrc4} alt="icon" style={{height:"30px", width:"30px", marginTop:"10px"}}></img>
