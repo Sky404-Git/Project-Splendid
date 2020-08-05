@@ -1,3 +1,25 @@
+## Table of contents
+* [General Info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup) 
+
+## General info
+This project is the client ready dashboard that allow the clients to review and edit their workforce data. This project aims to increase the accuracy and improve the efficiency in the job matching process. This web application allow the users to upload their excel file in a given standard format. In job matching process, the user can be able to choose the best match from the given predictions for each job. It also have the search functionality to quick search the particular occupation and its informations from the pool of ocuupations. After matching the jobs, users will be able to download the final excel report. 
+	
+## Technologies
+Project is created with:
+* React JS
+* Redux
+* Bootstrap 4
+* HTML 5
+* CSS 3
+	
+## Setup
+To run this project, install it locally using npm:
+$ npm install
+$ npm start
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
