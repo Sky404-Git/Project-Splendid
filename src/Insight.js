@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
-import PredictionGrid from './components/OccupationGrid/PredictionGrid';
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import UploadTopBar from "./components/UploadTopBar";
 import {Link} from "react-router-dom";
 import {NavLink} from "react-router-dom";
-import { Button } from 'reactstrap';
 import { CSVLink} from "react-csv";
 
 class Insight extends Component {

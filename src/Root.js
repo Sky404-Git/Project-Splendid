@@ -1,7 +1,6 @@
 import React from "react";
 import Home from "./Home/Home";
 import UploadPage from "./DataRequirement/UploadPage";
-import DataUpload from "./DataUpload/DataUpload";
 import CheckData from "./CheckData/CheckData";
 import Practice from "./Practice.js";
 import Search from "./search.js";

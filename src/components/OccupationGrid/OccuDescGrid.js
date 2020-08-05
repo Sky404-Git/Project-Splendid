@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import design from './Occupationgrid.module.css';
 import OccuDesc from '../OccupationCard/OccuDesc';
 
 const OccuDescGrid = ({ items, inputValue }) => {

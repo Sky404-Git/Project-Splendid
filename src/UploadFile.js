@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./App.css";
-import { OutTable, ExcelRenderer } from "react-excel-renderer";
+import {ExcelRenderer} from "react-excel-renderer";
 import {
   Col,
   Input,

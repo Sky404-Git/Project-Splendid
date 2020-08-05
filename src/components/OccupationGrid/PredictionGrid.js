@@ -4,10 +4,7 @@ import design from './Occupationgrid.module.css';
 import Prediction from '../OccupationCard/Prediction';
 import { connect } from 'react-redux';
 import Occupations from '../OccupationCard/occupations_list.json';
-import OccuDescGrid from './OccuDescGrid'
 import { Button } from 'reactstrap';
-import { CSVLink} from "react-csv";
-import { data } from 'jquery';
 import {Link} from "react-router-dom";
 
 
@@ -81,16 +78,14 @@ const PredictionGrid = ({inputValue, ...props }) => {
     <ul className={design.occupation_grid}>
       {items.filter(item =>
         (item[0].toLowerCase().includes(inputValue.toLowerCase()),
-        
         item[21].toLowerCase().includes(inputValue.toLowerCase())
-        ||item[1].toLowerCase().includes(inputValue.toLowerCase())),)
+        ||item[1].toLowerCase().includes(inputValue.toLowerCase())))
         .length > 0 ? (
         items
           .filter(item =>
             (item[0].toLowerCase().includes(inputValue.toLowerCase()),
-            
             item[21].toLowerCase().includes(inputValue.toLowerCase())
-            ||item[1].toLowerCase().includes(inputValue.toLowerCase())),
+            ||item[1].toLowerCase().includes(inputValue.toLowerCase()))
           )
           .map(item => (
             <Prediction

@@ -1,17 +1,11 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import LogoutButton from "../components/LogoutButton";
 import UploadTopBar from "../components/UploadTopBar";
-import CheckDataTable from "../components/CheckDataTable";
 import "../../node_modules/bootstrap/dist/css/bootstrap.css";
-import WarningCard from "../components/WarningCard";
 import Footer from "../components/Footer";
-import { OutTable, ExcelRenderer } from "react-excel-renderer";
-
+import { OutTable} from "react-excel-renderer";
 import "./CheckData.css";
 import { connect } from "react-redux";
 import {NavLink} from "react-router-dom";
-import {Link} from "react-router-dom";
 
 let head1 = "Upload workforce data for Faethm";
 let head2 = "USER DATA TABLE";
